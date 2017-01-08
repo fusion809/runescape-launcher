@@ -4,7 +4,8 @@ MAINTAINER Brenton Horne <brentonhorne77@gmail.com>
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 RUN echo keyboard-configuration keyboard-configuration/layout select 'English (US)' | debconf-set-selections;
 RUN echo keyboard-configuration keyboard-configuration/layoutcode select 'us' | debconf-set-selections;
-RUN apt-get update && apt-get upgrade -y && apt-get install -y wget sudo ubuntu-gnome-desktop apt-transport-https
+RUN apt-get update && apt-get upgrade -y && apt-get autoremove -y && apt-get autoclean -y
+RUN apt-get install -y wget sudo ubuntu-gnome-desktop apt-transport-https
 ENV DISPLAY=:1
 RUN wget -O - https://content.runescape.com/downloads/ubuntu/runescape.gpg.key | apt-key add -
 RUN mkdir -p /etc/apt/sources.list.d
