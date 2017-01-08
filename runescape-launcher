@@ -4,4 +4,5 @@ docker run \
   -v /tmp/.X11-unix:/tmp/.X11-unix \
   -e DISPLAY=:0 \
   -v ${HOME}/.runescape:/home/runescape/.runescape \
+  -v ${HOME}/Jagex:/home/runescape/Jagex
 fusion809/runescape-launcher /usr/bin/runescape-launcher

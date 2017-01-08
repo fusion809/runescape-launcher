@@ -17,5 +17,6 @@ RUN useradd -G admin -ms /bin/bash runescape
 RUN echo 'runescape:runescape' | chpasswd
 RUN echo 'runescape ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 USER runescape
+RUN gsettings set org.gnome.desktop.interface gtk-theme adwaita
 WORKDIR /home/runescape
 CMD gnome-session
