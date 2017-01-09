@@ -4,7 +4,7 @@ A Docker container that provides the RuneScape NXT Client. It uses Ubuntu 14.04 
 To launch it without this script run:
 
 ```bash
-x+
+xhost+
 docker run \
   -v /tmp/.X11-unix:/tmp/.X11-unix \
   -e DISPLAY=:0 \
