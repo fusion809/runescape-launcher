@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=RuneScape (NXT)
+Icon=runescape
+Exec=runescape-launcher %U
+TryExec=/usr/local/bin/runescape-launcher %U
+Type=Application
+Categories=Game;RolePlaying;

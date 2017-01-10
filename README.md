@@ -12,3 +12,15 @@ docker run \
   -v ${HOME}/Jagex:/home/runescape/Jagex \
 fusion809/runescape-launcher /usr/bin/runescape-launcher
 ```
+
+while to install the `runescape-launcher` script, along with the desktop configuration file for this app run:
+
+```bash
+bash -c "$(wget -cqO- https://git.io/vM8FF)"
+```
+
+or:
+
+```bash
+bash -c "$(curl -sL https://git.io/vM8FF)"
+```
