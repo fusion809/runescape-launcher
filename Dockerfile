@@ -16,7 +16,7 @@ RUN groupadd admin
 RUN useradd -G admin -ms /bin/bash runescape
 RUN echo 'runescape:runescape' | chpasswd
 RUN echo 'runescape ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
-RUN gpasswd -a fusion809 audio
+RUN gpasswd -a runescape audio
 USER runescape
 WORKDIR /home/runescape
 CMD gnome-session
