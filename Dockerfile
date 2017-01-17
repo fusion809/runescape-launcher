@@ -16,7 +16,8 @@ RUN groupadd admin
 RUN useradd -G admin -ms /bin/bash runescape
 RUN echo 'runescape:runescape' | chpasswd
 RUN echo 'runescape ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+RUN gpasswd -a fusion809 audio
 USER runescape
-RUN gsettings set org.gnome.desktop.interface gtk-theme adwaita
 WORKDIR /home/runescape
 CMD gnome-session
+RUN gsettings set org.gnome.desktop.interface gtk-theme adwaita
