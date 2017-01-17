@@ -1,7 +1,7 @@
 # runescape-launcher
 A Docker container that provides the RuneScape NXT Client. It uses Ubuntu 14.04 as its base Docker container. To more easily launch this program, merely move the `runescape-launcher` script in this repository to `/usr/local/bin` (or `/usr/bin`, depending on your preference). Then you can launch RuneScape's NXT Client by running `runescape-launcher`.
 
-To launch it without this script run:
+To launch it without this script run (beware, however, this is without audio, I do not know how to run this Docker image with audio so if you find out how to, please do tell me via an issue or via its (Reddit thread)[https://www.reddit.com/r/runescape/comments/5ohxs7/running_runescapes_nxt_client_on_linux_via_a/]):
 
 ```bash
 xhost+
