@@ -1,23 +1,29 @@
-# This is a comment
 FROM ubuntu:14.04
-MAINTAINER Brenton Horne <brentonhorne77@gmail.com>
-RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
-RUN echo keyboard-configuration keyboard-configuration/layout select 'English (US)' | debconf-set-selections;
-RUN echo keyboard-configuration keyboard-configuration/layoutcode select 'us' | debconf-set-selections;
-RUN apt-get update && apt-get upgrade -y && apt-get autoremove -y && apt-get autoclean -y
-RUN apt-get install -y wget sudo ubuntu-gnome-desktop apt-transport-https
-ENV DISPLAY=:1
-RUN wget -O - https://content.runescape.com/downloads/ubuntu/runescape.gpg.key | apt-key add -
-RUN mkdir -p /etc/apt/sources.list.d
-RUN echo "deb https://content.runescape.com/downloads/ubuntu trusty non-free" > /etc/apt/sources.list.d/runescape.list
-RUN apt-get update
-RUN apt-get install -y runescape-launcher
-RUN groupadd admin
-RUN useradd -G admin -ms /bin/bash runescape
-RUN echo 'runescape:runescape' | chpasswd
-RUN echo 'runescape ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
-RUN gpasswd -a runescape audio
+
+RUN apt-get update && apt-get install -y \
+    apt-transport-https \
+    wget \
+    libcurl4-openssl-dev \
+    xserver-xorg-video-intel \
+    packagekit-gtk3-module \
+    libcanberra-gtk-module \
+    alsa-utils \
+    libasound2-plugins \
+    libcanberra-pulse \
+    gvfs
+        
+RUN wget -O - https://content.runescape.com/downloads/ubuntu/runescape.gpg.key | apt-key add - && \
+    mkdir -p /etc/apt/sources.list.d && \
+    echo "deb https://content.runescape.com/downloads/ubuntu trusty non-free" > /etc/apt/sources.list.d/runescape.list && \
+    apt-get update && \
+    apt-get install -y runescape-launcher
+
+ENV HOME /home/runescape
+RUN useradd --create-home --home-dir $HOME runescape \
+    && gpasswd -a runescape audio \
+    && chown -R runescape:runescape $HOME
+WORKDIR $HOME
 USER runescape
-WORKDIR /home/runescape
-CMD gnome-session
-RUN gsettings set org.gnome.desktop.interface gtk-theme adwaita
+
+CMD /us/bin/runescape-launcher
+        
