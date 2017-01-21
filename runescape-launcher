@@ -8,4 +8,4 @@ docker run --rm \
   -e PULSE_SERVER=tcp:$(hostname -f):4713 \
   -e PULSE_COOKIE=/run/pulse/cookie \
   -v ${HOME}/.config/pulse/cookie:/run/pulse/cookie \
-runescape:latest /usr/bin/runescape-launcher
+fusion809/runescape-launcher /usr/bin/runescape-launcher
