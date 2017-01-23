@@ -1,3 +1,5 @@
+# Maintainer: Brenton Horne <brentonhorne77 at gmail dot com>
+# Contributor: Mordeth http://services.runescape.com/m=forum/c=BayWIRvWZa8/users.ws?searchname=Mordeth&lookup=view
 FROM ubuntu:14.04
 
 RUN apt-get update && apt-get install -y \
