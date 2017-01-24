@@ -27,5 +27,5 @@ RUN useradd --create-home --home-dir $HOME runescape \
 WORKDIR $HOME
 USER runescape
 
-CMD /us/bin/runescape-launcher
+CMD /usr/bin/runescape-launcher
         
