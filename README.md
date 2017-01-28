@@ -5,7 +5,7 @@ To launch it without this script run (beware, however, this is without audio, I 
 
 ```bash
 xhost+
-docker run \
+docker run --rm \
   -v /tmp/.X11-unix:/tmp/.X11-unix \
   -e DISPLAY=:0 \
   -v ${HOME}/.runescape:/home/runescape/.runescape \
