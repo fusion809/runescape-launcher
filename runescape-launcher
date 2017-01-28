@@ -2,10 +2,7 @@
 xhost +
 docker run --rm \
   -v /tmp/.X11-unix:/tmp/.X11-unix \
-  -e DISPLAY=:0 \
+  -e DISPLAY=$DISPLAY \
   -v ${HOME}/.runescape:/home/runescape/.runescape \
   -v ${HOME}/Jagex:/home/runescape/Jagex \
-  -e PULSE_SERVER=tcp:$(hostname -f):4713 \
-  -e PULSE_COOKIE=/run/pulse/cookie \
-  -v ${HOME}/.config/pulse/cookie:/run/pulse/cookie \
 fusion809/runescape-launcher /usr/bin/runescape-launcher
