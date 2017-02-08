@@ -5,6 +5,7 @@ FROM ubuntu:14.04
 RUN apt-get update && apt-get install -y \
     apt-transport-https \
     wget \
+    libcurl3 \
     libcurl4-openssl-dev \
     xserver-xorg-video-intel \
     packagekit-gtk3-module \
