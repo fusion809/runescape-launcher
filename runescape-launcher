@@ -1,5 +1,13 @@
 #!/bin/sh
 xhost +
+if ! [ -d $HOME/Jagex ]; then
+	mkdir -p $HOME/Jagex
+fi
+
+if ! [ -d $HOME/.runescape ]; then
+	mkdir -p $HOME/.runescape
+fi
+
 docker run --rm \
   -v /tmp/.X11-unix:/tmp/.X11-unix \
   -e DISPLAY=$DISPLAY \
