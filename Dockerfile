@@ -13,7 +13,8 @@ RUN apt-get update && apt-get install -y \
     alsa-utils \
     libasound2-plugins \
     libcanberra-pulse \
-    gvfs
+    gvfs \
+    libpcre3
         
 RUN wget -O - https://content.runescape.com/downloads/ubuntu/runescape.gpg.key | apt-key add - && \
     mkdir -p /etc/apt/sources.list.d && \
