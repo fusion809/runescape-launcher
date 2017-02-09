@@ -1,7 +1,9 @@
 [Desktop Entry]
+StartupNotify=true
+Version=1.0
 Name=RuneScape (NXT)
-Icon=runescape
-Exec=runescape-launcher %U
-TryExec=/usr/local/bin/runescape-launcher %U
 Type=Application
+Icon=/usr/local/share/pixmaps/runescape.png
+Exec=/usr/local/bin/runescape-launcher
+TryExec=/usr/local/bin/runescape-launcher
 Categories=Game;RolePlaying;
