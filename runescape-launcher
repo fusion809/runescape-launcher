@@ -8,9 +8,14 @@ if ! [ -d $HOME/.runescape ]; then
 	mkdir -p $HOME/.runescape
 fi
 
+RS_USER=$(logname)
+RS_UID=$(id -u $RS_USER)
+
 docker run --rm \
   -v /tmp/.X11-unix:/tmp/.X11-unix \
   -e DISPLAY=$DISPLAY \
   -v ${HOME}/.runescape:/home/runescape/.runescape \
   -v ${HOME}/Jagex:/home/runescape/Jagex \
+  -v "/etc/machine-id:/etc/machine-id" \
+  -v "/run/user/${RS_UID}/pulse:/run/user/${RS_UID}/pulse" \
 fusion809/runescape-launcher /usr/bin/runescape-launcher
